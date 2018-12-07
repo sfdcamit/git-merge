@@ -7,7 +7,7 @@ pipeline {
                     //for windows 
                     //bat "ant retrieve"
                     bat "ant deploy"
-                    bat "cd deployComponent"
+                    //bat "cd deployComponent"
                     bat "git init"
                     bat "git add ."
                     bat "git status"
