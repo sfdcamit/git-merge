@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>174</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>creditCard</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Amount__c -  Amount_Paid__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Amount Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Bank__c</fullName>
+        <externalId>false</externalId>
+        <label>Name Of Bank</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>State Bank Of India</fullName>
+                    <default>false</default>
+                    <label>State Bank Of India</label>
+                </value>
+                <value>
+                    <fullName>Bank of Baroda</fullName>
+                    <default>false</default>
+                    <label>Bank of Baroda</label>
+                </value>
+                <value>
+                    <fullName>Axix Bank</fullName>
+                    <default>false</default>
+                    <label>Axix Bank</label>
+                </value>
+                <value>
+                    <fullName>OBC</fullName>
+                    <default>false</default>
+                    <label>OBC</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Payments</relationshipLabel>
+        <relationshipName>Payments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Payment_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Comment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Payment_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Credit Card</fullName>
+                    <default>false</default>
+                    <label>Credit Card</label>
+                </value>
+                <value>
+                    <fullName>Dabit Card</fullName>
+                    <default>false</default>
+                    <label>Dabit Card</label>
+                </value>
+                <value>
+                    <fullName>Paytm</fullName>
+                    <default>false</default>
+                    <label>Paytm</label>
+                </value>
+                <value>
+                    <fullName>Paypall</fullName>
+                    <default>false</default>
+                    <label>Paypall</label>
+                </value>
+                <value>
+                    <fullName>Tej</fullName>
+                    <default>false</default>
+                    <label>Tej</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Net Banking</fullName>
+                    <default>false</default>
+                    <label>Net Banking</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Payment_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( MONTH(DATEVALUE( Payment_Date__c )),
+      1, &quot;JANUARY&quot;,
+      2, &quot;FEBRUARY&quot;,
+3, &quot;MARCH&quot;,
+4, &quot;APRIL&quot;,
+5, &quot;MAY&quot;,
+6, &quot;JUNE&quot;,
+7,&quot;JULY&quot;,
+8,&quot;AUGUST&quot;,
+9,&quot;SEPTEMBER&quot;,
+10,&quot;OCTOBER&quot;,
+11, &quot;NOVEMBER&quot;,
+12, &quot;DECEMBER&quot;,
+&quot;&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payment Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Status__c , 
+       &quot;Success&quot;,  IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;success&quot;) , 
+       &quot;Completed&quot;, IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;success&quot;),
+       &quot;Awating&quot;, IMAGE(&quot;/resource/waiting&quot;, &quot;waiting&quot;, 50, 50),
+        &quot;Failed&quot;, IMAGE(&quot;/resource/failed&quot;, &quot;failed&quot;, 50, 50),
+&quot;Scheduled&quot;, IMAGE(&quot;/resource/Schedule&quot;, &quot;Schedule&quot;, 40, 60),
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR( DATEVALUE(Payment_Date__c )))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payment Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Awating</fullName>
+                    <default>false</default>
+                    <label>Awating</label>
+                </value>
+                <value>
+                    <fullName>Success</fullName>
+                    <default>false</default>
+                    <label>Success</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>true</default>
+                    <label>Scheduled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Amount__c</fullName>
+        <defaultValue>25000</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Payment</label>
+    <nameField>
+        <displayFormat>PAY - {YYYY}-{MM}-{DD}-{0}</displayFormat>
+        <label>Payment #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Payments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Payment_Success_Can_not_be_changed</fullName>
+        <active>false</active>
+        <description>Payment Success Can not be changed</description>
+        <errorConditionFormula>AND(
+     ISCHANGED( Status__c ),
+     CASE(Status__c ,
+     &quot;Success&quot; , 1,
+      &quot;Completed&quot; , 1,
+    0
+   )=1
+)</errorConditionFormula>
+        <errorMessage>Record can not be edited once it completed/success</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>
