@@ -11,48 +11,6 @@
                      retrieveTarget="deployComponent" unpackaged="/package.xml"/>
                      
     </target>
-    <macrodef name="git">
-        <attribute name="command" />
-        <attribute name="dir" />
-        <element name="args" optional="true" />
-        <sequential>
-            <echo message="Executing Command in folder @{dir}" />
-            <echo message="git @{command}" />
-            <exec executable="C:\Program Files\Git\bin\git.exe" dir="@{dir}">
-                <arg value="@{command}" />
-                <args/>
-            </exec>
-        </sequential>
-    </macrodef>
-
-    <macrodef name="commit">
-        <attribute name="command" />
-        <attribute name="repo" /><!-- Githup Repo-->
-        <element name="args" optional="true" />
-        <sequential>
-            <echo message="Executing Command in Repo @{repo}" />
-            <echo message="git @{command}" />
-            <exec executable="C:\Program Files\Git\bin\git.exe" 
-                            dir="https://github.com/amitastreait/AmitSys">
-                <arg value="@{command}" />
-                <args/>
-            </exec>
-        </sequential>
-    </macrodef>
-
-    <macrodef name="init">
-        <attribute name="command" />
-        <attribute name="dir" />
-        <element name="args" optional="true" />
-        <sequential>
-            <echo message="Executing Command in folder @{dir}" />
-            <echo message="git @{command}" />
-            <exec executable="C:\Program Files\Git\bin\git.exe" dir="@{dir}">
-                <arg value="@{command}" />
-                <args/>
-            </exec>
-        </sequential>
-    </macrodef>
 
 <!-- Deploy an unpackaged set of metadata to PRODUCTION Salesforce org -->
     <target name="deploy">
@@ -60,25 +18,5 @@
           serverurl="${sf.serverurlDeploy}" deployRoot="deployComponent" 
           checkOnly="false"/>
         <echo message="Commiting all changes with message ${gt.commitMessage}" />
-        
-        <init command="init" dir="C:\Users\amitsingh4\Documents\deploymentFolder">
-        </init>
-        
-        <git command="add" dir="C:\Users\amitsingh4\Documents\deploymentFolder">
-            <args>
-                <arg value="." />
-            </args>
-        </git>
-
-        <commit command="commit" repo="https://github.com/amitastreait/AmitSys">
-            <args>
-                <arg value="-m ${gt.commitMessage}" />
-            </args>
-        </commit>
-
-        <!-- <git command="push origin master - -force" dir="https://github.com/amitastreait/AmitSys">
-           
-        </git> -->
-
     </target>
  </project>
