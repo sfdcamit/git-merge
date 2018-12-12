@@ -13,7 +13,7 @@ pipeline {
                     bat "git status"
                     bat "git pull origin master"
                     bat "git add ."
-                    bat "git commit -m 'a test commit'"
+                    bat "git commit -m \"testmessage\""
                     bat "git status"
                     bat "git push origin master"
                     bat "ant deploy"
