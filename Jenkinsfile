@@ -1,30 +1,31 @@
 pipeline {
     agent any 
     stages {
-        stage('Build & Deploy & Merge') { 
+        stage(' Build Stage ') { 
             steps {
-                withAnt(installation: 'ANT_HOME') {
-                    //for windows 
-                    //bat "ant retrieve"
-                    //bat "ant deploy"
-                    //bat "cd deployComponent"
-                    bat "git init"
-                    bat "git add ."
-                    bat "git status"
-                    bat "git checkout Ananya"
-                    bat "git ls-tree --name-only Ananya"
-                    bat "git pull origin master"
-                    bat "git status"
-                    bat "git pull origin master"
-                    bat "git add ."
-                    //bat "git commit -m \"testmessage\""
-                    bat "git checkout master"
-                    bat "git merge Ananya"
-                   //bat "git status"
-                    //bat "git checkout master"
-                    bat "ant deploy"
-                }
                 echo "This is build Stage"
+                withAnt(installation: 'ANT_HOME') {
+                    // for windows batch command..
+                    bat "ant retrieve"
+                    bat "ant deploy"
+                    //bat "cd deployComponent"
+                    //bat "git init"
+                    //bat "git add ."
+                    //bat "git status"
+                    //bat "git checkout Ananya"
+                    //bat "git ls-tree --name-only Ananya"
+                    //bat "git pull origin master"
+                    //bat "git status"
+                    //bat "git pull origin master"
+                    //bat "git add ."
+                    //bat "git commit -m \"testmessage\""
+                    //bat "git checkout master"
+                    //bat "git merge Ananya"
+                    //bat "git status"
+                    //bat "git checkout master"
+                    //bat "ant deploy"
+                }
+                
             }
         }
         stage('Compile') { 
