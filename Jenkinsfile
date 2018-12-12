@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage('Build & Deploy') { 
+        stage('Build & Deploy & Merge') { 
             steps {
                 withAnt(installation: 'ANT_HOME') {
                     //for windows 
@@ -11,6 +11,12 @@ pipeline {
                     bat "git init"
                     bat "git add ."
                     bat "git status"
+                    bat "git pull origin master"
+                    bat "git add ."
+                    bat "git commit -m 'a test commit'"
+                    bat "git status"
+                    bat "git push origin master"
+                    bat "ant deploy"
                 }
                 echo "This is build Stage"
             }
