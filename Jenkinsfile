@@ -12,7 +12,7 @@ pipeline {
                     bat "git add ."
                     bat "git status"
                     bat "git checkout Ananya"
-                    bat "ls"
+                    bat "git ls-tree --name-only Ananya"
                     bat "git pull origin master"
                     bat "git add ."
                     //bat "git commit -m \"testmessage\""
