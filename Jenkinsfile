@@ -18,7 +18,7 @@ pipeline {
                     bat "git pull origin master"
                     bat "git add ."
                     //bat "git commit -m \"testmessage\""
-                    bat "git checkout origin master"
+                    bat "git checkout master"
                     bat "git merge Ananya"
                    //bat "git status"
                     //bat "git checkout master"
