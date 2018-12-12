@@ -1,0 +1,7 @@
+Steps to be followed for automated Merge to Dev Branch from Feature Branch.
+
+1 - pull request for all child brach (git pull https://github.com/username/repo.git branchname)
+2 - git init
+3 - git add .
+4 - git status
+5 - git push
