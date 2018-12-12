@@ -13,9 +13,9 @@ pipeline {
                     bat "git status"
                     bat "git pull origin master"
                     bat "git add ."
-                    bat "git commit -m \"testmessage\""
-                    bat "git status"
-                    bat "git push origin master"
+                    //bat "git commit -m \"testmessage\""
+                    //bat "git status"
+                    //bat "git push origin master"
                     bat "ant deploy"
                 }
                 echo "This is build Stage"
