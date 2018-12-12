@@ -14,9 +14,10 @@ pipeline {
                     bat "git checkout Ananya"
                     bat "git ls-tree --name-only Ananya"
                     bat "git pull origin master"
+                    bat "git status"
                     bat "git add ."
-                    //bat "git commit -m \"testmessage\""
-                    //bat "git status"
+                    bat "git commit -m \"testmessage\""
+                    bat "git status"
                     //bat "git push origin master"
                     bat "ant deploy"
                 }
