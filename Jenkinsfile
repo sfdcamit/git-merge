@@ -46,16 +46,20 @@ pipeline {
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
             
         }
-        publishHTML(
-            [
-                allowMissing: true, 
-                alwaysLinkToLastBuild: false, 
-                keepAll: false, 
-                reportDir: 'C:\\Users\\amitsingh4\\Documents\\Reports', 
-                reportFiles: 'index.html, index1.html', 
-                reportName: 'HTML Report', 
-                reportTitles: '${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}'
-            ]
-        )
+    }
+    post{
+        always{
+            publishHTML(
+                    [
+                        allowMissing: true, 
+                        alwaysLinkToLastBuild: false, 
+                        keepAll: false, 
+                        reportDir: 'C:\\Users\\amitsingh4\\Documents\\Reports', 
+                        reportFiles: 'index.html, index1.html', 
+                        reportName: 'HTML Report', 
+                        reportTitles: '${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}'
+                    ]
+                )
+        }
     }
 }
