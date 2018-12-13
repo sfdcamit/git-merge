@@ -8,22 +8,6 @@ pipeline {
                     // for windows batch command..
                     bat "ant retrieve"
                     bat "ant deploy"
-                    //bat "cd deployComponent"
-                    //bat "git init"
-                    //bat "git add ."
-                    //bat "git status"
-                    //bat "git checkout Ananya"
-                    //bat "git ls-tree --name-only Ananya"
-                    //bat "git pull origin master"
-                    //bat "git status"
-                    //bat "git pull origin master"
-                    //bat "git add ."
-                    //bat "git commit -m \"testmessage\""
-                    //bat "git checkout master"
-                    //bat "git merge Ananya"
-                    //bat "git status"
-                    //bat "git checkout master"
-                    //bat "ant deploy"
                 }
                 
             }
@@ -51,6 +35,15 @@ pipeline {
             steps {
                 echo "Commiting to Feature Branch...." 
             }
+        }
+    }
+    post {
+        always {
+            echo 'I will always say Hello again!'
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+            
         }
     }
 }
