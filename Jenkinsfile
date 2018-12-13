@@ -45,10 +45,7 @@ pipeline {
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
             
-        }
-    }
-    post{
-        always{
+            echo "punlishing the HTML report"
             publishHTML(
                     [
                         allowMissing: true, 
@@ -60,6 +57,7 @@ pipeline {
                         reportTitles: '${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}'
                     ]
                 )
+            
         }
     }
 }
